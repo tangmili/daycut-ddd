@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sofa="http://schema.alipay.com/sofa/schema/slite"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://schema.alipay.com/sofa/schema/slite http://schema.alipay.com/sofa/slite.xsd"
+>
+
+    <!--dds zdal-->
+<!--    <sofa:zdal-jdbc id="ddsSingleDataSource">
+        <sofa:appDataSourceName value="singleDataSource"/>
+    </sofa:zdal-jdbc>-->
+
+
+    <sofa:zdal-jdbc id="daycutdataSource">
+        <!-- 与数据源配置中的 AppDataSourceBean.appDataSourceName 保持保持一致 -->
+        <sofa:appDataSourceName value="ddsDayCutDataSource"/>
+    </sofa:zdal-jdbc>
+</beans>

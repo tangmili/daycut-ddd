@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry
+            location="/Users/jamestang/AppSoft/mvnrepo/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar"/>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://10.164.50.22:3300/accountting" userId="DBSA1"
+                        password="DBSA1">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.cathay.account.accswitch.dao.domain"
+                            targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+            <!-- <property name="rootClass" value="com.alibaba.intl.finance.trade.dal.model.BaseDO"/>-->
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mybatis.mapper"
+                         targetProject="./src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.cathay.account.accswitch.dao.persistence" targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="T_ACC_TEST" domainObjectName="AccTestDO"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="true"/>
+<!--
+        <table tableName="T_VOUCHER_BAT_DETAIL" domainObjectName="VoucherBatDetailDo"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+<!--        <table tableName="T_VOUCHER_BAT" domainObjectName="VoucherBatDo"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+   <!--     <table tableName="T_VOUCHER_BAT_DETAIL" domainObjectName="VoucherBatDetailDo"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+       <!-- <table tableName="T_VOUCHER_BASE" domainObjectName="VoucherBaseDo"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="true"/>
+        <table tableName="T_VOUCHER_BAT" domainObjectName="VoucherBatDo"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="true"/>
+        <table tableName="T_VOUCHER_ACCEVENT" domainObjectName="VoucherAcceventDo"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="true"/>
+
+       -->
+
+
+        <!--  <table tableName="T_MARKET_REBATE_RULE" domainObjectName="MarketRebateRuleDO"
+                 enableCountByExample="false"
+                 enableUpdateByExample="false" enableDeleteByExample="false"
+                 enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+
+
+        <!--
+                <table tableName="T_MARKET_PRODUCT_CFG" domainObjectName="MarketProductCfgDO"
+                       enableCountByExample="false"
+                       enableUpdateByExample="false" enableDeleteByExample="false"
+                       enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+        <!--    <table tableName="T_MARKET_TXN_TYPE_REL" domainObjectName="MarketTxnTypeRelDO"
+                   enableCountByExample="false"
+                   enableUpdateByExample="false" enableDeleteByExample="false"
+                   enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+        <!--  <table tableName="T_MARKET_ORG_REL" domainObjectName="MarketOrgRelDO"
+                 enableCountByExample="false"
+                 enableUpdateByExample="false" enableDeleteByExample="false"
+                 enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+<!--        <table tableName="T_CREDIT_LOG_ORDER" domainObjectName="CreditLogOrderDO"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+ <!--       <table tableName="T_CREDIT_LOG_BS_AUDIT" domainObjectName="CreditLogBsAuditDO"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+<!--        <table tableName="T_CREDIT_LIMIT_INFO" domainObjectName="CreditLimitInfoDO"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+<!--        <table tableName="T_CREDIT_LOG_LIMIT" domainObjectName="CreditLogLimitDO"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+        <!--
+                <table tableName="T_MARKET_RECOMMENDREBATE_REL" domainObjectName="MarketRecommendRebateRelDO"
+                       enableCountByExample="false"
+                       enableUpdateByExample="false" enableDeleteByExample="false"
+                       enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+        <!--        <table tableName="T_MARKET_REBATE_LMT_RULE" domainObjectName="MarketRebateLmtRuleDO"
+                       enableCountByExample="false"
+                       enableUpdateByExample="false" enableDeleteByExample="false"
+                       enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+        <!--
+                <table tableName="T_MARKET_COUNTDATA" domainObjectName="MarketCountDataDO"
+                       enableCountByExample="false"
+                       enableUpdateByExample="false" enableDeleteByExample="false"
+                       enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+
+
+        <!--
+                <table tableName="payment_trade_freeze" domainObjectName="TradefreezeDO"
+                       enableCountByExample="false"
+                       enableUpdateByExample="false" enableDeleteByExample="false"
+                       enableSelectByExample="false" selectByExampleQueryId="true"/>
+
+                <table tableName="payment_trade_freeze" domainObjectName="TradefreezeDO"
+                       enableCountByExample="false"
+                       enableUpdateByExample="false" enableDeleteByExample="false"
+                       enableSelectByExample="false" selectByExampleQueryId="true"/>
+
+
+                   <table tableName="payment_trade_unfreeze" domainObjectName="TradeUnfreezeDO"
+                       enableCountByExample="false"
+                       enableUpdateByExample="false" enableDeleteByExample="false"
+                       enableSelectByExample="false" selectByExampleQueryId="true"/>
+
+               <table tableName="payment_trade_refund" domainObjectName="TradeRefundDO"
+                        enableCountByExample="false"
+                        enableUpdateByExample="false" enableDeleteByExample="false"
+                        enableSelectByExample="false" selectByExampleQueryId="true"/>
+               <table tableName="payment_account_info" domainObjectName="AccountInfoDO"
+                        enableCountByExample="false"
+                        enableUpdateByExample="false" enableDeleteByExample="false"
+                        enableSelectByExample="false" selectByExampleQueryId="true"/>
+                 <table tableName="payment_customer_info" domainObjectName="CustomerInfoDO"
+                        enableCountByExample="false"
+                        enableUpdateByExample="false" enableDeleteByExample="false"
+                        enableSelectByExample="false" selectByExampleQueryId="true"/>
+                 <table tableName="payment_trade_acquiring" domainObjectName="TradeAcquiringDO"
+                        enableCountByExample="false"
+                        enableUpdateByExample="false" enableDeleteByExample="false"
+                        enableSelectByExample="false" selectByExampleQueryId="true"/>
+                 <table tableName="payment_trade_base" domainObjectName="TradeBaseDO"
+                        enableCountByExample="false"
+                        enableUpdateByExample="false" enableDeleteByExample="false"
+                        enableSelectByExample="false" selectByExampleQueryId="true"/>
+                 <table tableName="payment_trade_payment" domainObjectName="TradePaymentDO"
+                        enableCountByExample="false"
+                        enableUpdateByExample="false" enableDeleteByExample="false"
+                        enableSelectByExample="false" selectByExampleQueryId="true"/>
+                 <table tableName="payment_trade_preauth" domainObjectName="TradePreauthDO"
+                        enableCountByExample="false"
+                        enableUpdateByExample="false" enableDeleteByExample="false"
+                        enableSelectByExample="false" selectByExampleQueryId="true"/>
+                 <table tableName="payment_trade_refund" domainObjectName="TradeRefundDO"
+                        enableCountByExample="false"
+                        enableUpdateByExample="false" enableDeleteByExample="false"
+                        enableSelectByExample="false" selectByExampleQueryId="true"/>
+                 <table tableName="payment_trade_reverse" domainObjectName="TradeReverseDO"
+                        enableCountByExample="false"
+                        enableUpdateByExample="false" enableDeleteByExample="false"
+                        enableSelectByExample="false" selectByExampleQueryId="true"/>
+                 <table tableName="payment_trade_transfer" domainObjectName="TradeTransferDO"
+                        enableCountByExample="false"
+                        enableUpdateByExample="false" enableDeleteByExample="false"
+                        enableSelectByExample="false" selectByExampleQueryId="true"/>
+                 <table tableName="payment_trade_transfer_in" domainObjectName="TradeTransferInDO"
+                        enableCountByExample="false"
+                        enableUpdateByExample="false" enableDeleteByExample="false"
+                        enableSelectByExample="false" selectByExampleQueryId="true"/>
+                 <table tableName="payment_trade_transfer_out" domainObjectName="TradeTransferOutDO"
+                        enableCountByExample="false"
+                        enableUpdateByExample="false" enableDeleteByExample="false"
+                        enableSelectByExample="false" selectByExampleQueryId="true"/>-->
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       classpath:/org/springframework/beans/factory/xml/spring-beans-3.0.xsd"
+       default-autowire="byName">
+
+    <!-- id 与 app 名字保持一致 -->
+    <bean id="accounttingdaycutserver" class="com.alipay.zdal.client.config.bean.ZdalAppBean">
+        <property name="appName" value="accounttingdaycutserver"/>
+        <property name="dbmode" value="dev"/>
+        <property name="appDataSourceList">
+            <list>
+                <ref bean="appDataSource"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="appDataSource" class="com.alipay.zdal.client.config.bean.AppDataSourceBean">
+        <!-- 与 sofa:zdal-jdbc 中的 appDataSourceName 保持一致 -->
+        <property name="appDataSourceName" value="ddsDayCutDataSource"/>
+        <property name="dataBaseType" value="MYSQL"/>
+        <property name="physicalDataSourceSet">
+            <set>
+                <ref bean="physicalDataSource"/>
+            </set>
+        </property>
+        <property name="groupDataSourceRuleMap">
+            <map>
+                <entry key="singleG_0" value="singleM_0:r10w10" />
+            </map>
+        </property>
+    </bean>
+
+    <!-- 物理数据源 -->
+    <bean id="physicalDataSource" class="com.alipay.zdal.client.config.bean.PhysicalDataSourceBean">
+        <property name="name" value="cloudPhysicalDataSourceForSingle"/>
+        <property name="type" value="MYSQL"/>
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://10.164.50.22:3300/accountting?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="userName" value="DBSA1"/>
+        <property name="password" value="DBSA1"/>
+        <property name="minConn" value="1"/>
+        <property name="maxConn" value="100"/>
+        <property name="blockingTimeoutMillis" value="60000"/>
+        <property name="idleTimeoutMinutes" value="1"/>
+        <property name="preparedStatementCacheSize" value="0"/>
+        <property name="queryTimeout" value="0"/>
+        <!--<property name="prefill" value="true"/>-->
+        <property name="maxReadThreshold" value="100"/>
+        <property name="maxWriteThreshold" value="100"/>
+        <property name="logicDbNameSet">
+            <set>
+                <value>singleM_0</value>
+            </set>
+        </property>
+        <property name="connectionProperties">
+            <map>
+                <entry key="connectTimeout" value="10000"/>
+                <entry key="socketTimeout" value="10000"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>
